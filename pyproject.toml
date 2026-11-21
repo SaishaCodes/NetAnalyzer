@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netsentinel"
+version = "1.0.0"
+description = "A network log analyzer with rule-based detections and optional LLM explanations"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+llm = ["groq>=0.9.0"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+netsentinel = "netsentinel.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
